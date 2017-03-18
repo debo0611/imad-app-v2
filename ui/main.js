@@ -11,7 +11,7 @@ button.click = function() {
         if (request.readyState === XMLHttpRequest.DONE) {
             // Take some action ...
             if (request.status === 200) {
-                var counter = rquest.responseText;
+                var counter = request.responseText;
                 var span = document.getElementById("count");
                 span.InnerHTML = counter.toString();
             }
@@ -22,7 +22,5 @@ button.click = function() {
     // Make the request ...
     request.open('GET', 'http://debo0611.imad.hasura-app.io/counter', true);
     request.send(null);
-    
-    
 
 };
