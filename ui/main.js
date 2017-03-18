@@ -1,7 +1,7 @@
 console.log('Loaded!');
 
 var button = document.getElementById("counter");
-button.click = function() {
+button.onclick = function() {
     console.log("I am clicked!")
     
     // Create a request to the 'counter' endpoint
