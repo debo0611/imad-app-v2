@@ -116,6 +116,15 @@ app.get('/counter', function(req, res) {
 });
 
 
+var names = [];
+app.get('/submit-name/:name', function() {
+    // get the name from the request object
+    var name = req.params.name;
+    names.push(name);
+    res.send(JSON.stringify(names));
+})
+
+
 app.get('/:articleName', function(req, res) {
     articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
