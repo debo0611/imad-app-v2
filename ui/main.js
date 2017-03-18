@@ -2,6 +2,7 @@ console.log('Loaded!');
 
 var button = document.getElementById("counter");
 button.click = function() {
+    console.log("I am clicked!")
     
     // Create a request to the 'counter' endpoint
     var request = new XMLHttpRequest();
