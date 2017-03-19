@@ -122,6 +122,7 @@ app.get('/submit-name', function(req, res) { // /submit-name?name=xxx
     // get the name from the request object
     // var name = req.params.name;
     var name = req.query.name;
+    console.log(req.query);
     names.push(name);
     res.send(JSON.stringify(names));
 })
