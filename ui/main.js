@@ -63,7 +63,7 @@ submit.onclick = function() {
     };
     
     // Make the request ...
-    request.open('GET', 'http://debo0611.imad.hasura-app.io/submit-name/value=' + name, true);
+    request.open('GET', 'http://debo0611.imad.hasura-app.io/submit-name?value=' + name, true);
     request.send(null);
 
     
