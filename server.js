@@ -72,7 +72,7 @@ var articles = {
                         </p>
                         `
     }
-}
+};
 
 function createTemplate(data) {
     var title = data.title;
@@ -140,15 +140,15 @@ app.get('/submit-name', function(req, res) { // /submit-name?name=xxx
 // lasts for as long as your app is running
 var pool = new Pool(config);
 app.get('/test-db', function() {
-    console.log("reached endpoint test-db");
    // make a request
    // return a response with the results
    pool.query('SELECT * FROM test', function(err, result) {
-       if (err) {
-           res.status(500).send(err.toString());
-       } else {
-           res.send(JSON.stringify(result));
-       }
+    //   if (err) {
+    //       res.status(500).send(err.toString());
+    //   } else {
+    //       res.send(JSON.stringify(result));
+    //   }
+        res.send(JSON.stringify(result));
    });
    
 });
