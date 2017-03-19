@@ -140,6 +140,7 @@ app.get('/submit-name', function(req, res) { // /submit-name?name=xxx
 // lasts for as long as your app is running
 var pool = new Pool(config);
 app.get('/test-db', function() {
+    console.log("reached endpoint test-db")
    // make a request
    // return a response with the results
    pool.query('SELECT * FROM test', function(err, result) {
