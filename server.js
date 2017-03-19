@@ -6,8 +6,8 @@ var Pool = require('pg').Pool;
 var config = {
     user: 'debo0611',
     database: 'debo0611',
-    host: 'db.hasura.app.io',
-    port: 5432,
+    host: 'db.hasura.app.io', // host where db is hosted
+    port: '5432',
     password: process.env.DB_PASSWORD,
 };
 
