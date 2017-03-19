@@ -8,7 +8,7 @@ var config = {
     database: 'debo0611',
     host: 'db.hasura.app.io', // host where db is hosted
     port: '5432',
-    password: process.env.DB_PASSWORD,
+    password: process.env.DB_PASSWORD, // use the env var available as DB_PASSWORD
 };
 
 var app = express();
