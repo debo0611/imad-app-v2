@@ -31,8 +31,7 @@ button.onclick = function() {
 };
 
 // Submit name
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
+
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
     
@@ -61,7 +60,8 @@ submit.onclick = function() {
         }
         // Not done yet
     };
-    
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;    
     // Make the request ...
     request.open('GET', 'http://debo0611.imad.hasura-app.io/submit-name?value=' + name, true);
     request.send(null);
