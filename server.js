@@ -69,6 +69,17 @@ function hash(input) {
 app.get('/hash/:input', function(req, res) {
    var hashedString = hash(req.params.input, 'this-is-some-random-string'); 
    res.send(hashedString);
+   
+   // md5 -- known hashing algo . 
+   // password -- always hash to sm val "gju9043gGFF#G%%" every single time this same val if no random string added
+   // every single time this value is generated.. good as no way to figure out 
+   // common practice ... store table in store which commonly hashed value, they look a table up and 
+   // find for what string this "gju903..." is a hash ...
+   // To protect ourselves we append a salt value .. this will have some completely different hash vlue
+   // if we choose have chosen our salt "string" value randomly enough there is no chance someone has precreated 
+   // tables that contain commmonly known string.. So even if user chooses very common strings for password , it connot be reverse engineered!!!
+   // further to increase security further we choose to hash 1000 times!!!!
+   // so final value will never be available in any lookup value!
 });
 
 var pool = new Pool(config);
