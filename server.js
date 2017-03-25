@@ -116,6 +116,20 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var pool = new Pool(config);
+app.get('/test-db', function(req, res){
+    // make a select request
+    // return a response with results
+   pool.query('SELECT * FROM test', function(err, result) {
+       if (err) {
+           res.status(500).send(err.toString());
+       } else {
+           res.send(JSON.stringify(result));
+       }
+   }); 
+});
+
+
 
 var counter = 0;
 app.get('/counter', function(req, res) {
