@@ -63,7 +63,7 @@ function hash(input, salt) {
     // how do we create a hash ?
     crypto.pbkdf2Sync(input, salt, 1000, 512, 'sha512');
     // Convert hashed to sth readable and printable in our screen
-    return [pbkdf2Sync, 1000, salt, hashed.toString('hex')].join('$');
+    return [pbkdf2Sync, "1000", salt, hashed.toString('hex')].join('$');
 }
 
 app.get('/hash/:input', function(req, res) {
