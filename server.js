@@ -152,20 +152,20 @@ app.get('/submit-name', function(req, res) { // /submit-name?name=xxx
 
 // create the pool somewhere globally so its lifetime
 // lasts for as long as your app is running
-var pool = new Pool(config);
-app.get('/test-db', function() {
+// var pool = new Pool(config);
+// app.get('/test-db', function() {
    // make a request
    // return a response with the results
-   pool.query('SELECT * FROM test', function(err, result) {
+//   pool.query('SELECT * FROM test', function(err, result) {
     //   if (err) {
     //       res.status(500).send(err.toString());
     //   } else {
     //       res.send(JSON.stringify(result));
     //   }
-        res.send(JSON.stringify(result));
-   });
+        // res.send(JSON.stringify(result));
+//   });
    
-});
+// });
 
 
 app.get('/articles/:articleName', function(req, res) {
