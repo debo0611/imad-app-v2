@@ -59,7 +59,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-function hash(input) {
+function hash(input, salt) {
     // how do we create a hash ?
     crypto.pbkdf2Sync(input, salt, 1000, 512, 'sha512');
     // Convert hashed to sth readable and printable in our screen
