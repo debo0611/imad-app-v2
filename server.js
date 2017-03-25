@@ -167,11 +167,15 @@ app.get('/submit-name', function(req, res) { // /submit-name?name=xxx
    
 // });
 
-
+// SQL Injection follows
+// SELECT * FROM articles_db WHERE title = ''; DELETE WHERE a = 'asbf'
+// Conversion done by good library ...
+// SELECT * FROM articles_db WHERE title = '\'; DELETE WHERE a = \'asbf'
 app.get('/articles/:articleName', function(req, res) {
     articleName = req.params.articleName;
     
-    pool.query("SELECT * FROM article_db WHERE title = '" + req.params.articleName + "'", function(err, result) {
+    // pool.query("SELECT * FROM article_db WHERE title = '" + req.params.articleName + "'", function(err, result) {
+    pool.query("SELECT * FROM article_db WHERE title = $1", [req.params.articleName], function(err, result) {
         if (err) {
             res.status(500).send(err.toString());
         } else {
