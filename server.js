@@ -8,8 +8,8 @@ var config = {
     database: 'debo0611',
     host: 'db.imad.hasura-app.io', // host where db is hosted
     port: '5432',
-    password: process.env.DB_PASSWORD // use the env var available as DB_PASSWORD
-    // password: 'db-debo0611-44217'   
+    // password: process.env.DB_PASSWORD // use the env var available as DB_PASSWORD
+    password: 'db-debo0611-44217'   
 };
 
 var app = express();
