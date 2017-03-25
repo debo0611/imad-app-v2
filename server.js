@@ -124,7 +124,7 @@ app.get('/test-db', function(req, res){
        if (err) {
            res.status(500).send(err.toString());
        } else {
-           res.send(JSON.stringify(result.rows()));
+           res.send(JSON.stringify(result);
        }
    }); 
 });
@@ -176,7 +176,7 @@ app.get('/articles/:articleName', function(req, res) {
             res.status(500).send(err.toString());
         } else {
             if (result.rows.length === 0) {
-                res.send(JSON.stringify(result.rows()));
+                res.send(JSON.stringify(result));
                 // res.status(404).send('Article NOT found!');
             } 
             else {
